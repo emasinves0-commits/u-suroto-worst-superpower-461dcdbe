@@ -1,36 +1,42 @@
-// Worst Superpower — make.fun bounty u-suroto-worst-superpower-461dcdbe
-// Writes the one-line entry to /output/entry.txt and validates the gate
-// (UTF-8 text, 1 to 140 characters) before writing, so an invalid entry
-// fails loudly here instead of silently on the server.
+// Worst Superpower — u-suroto-worst-superpower-461dcdbe
+// Entry: one genuinely useless superpower, stated in a single line.
+// The power defeats itself: a crouton summoned to your palm that never
+// reaches it, once a week, at a fixed appointment nobody asked for.
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
-import { mkdirSync, writeFileSync } from "node:fs";
-
-const ENTRY =
-  "I can hear a pin drop anywhere on Earth — but only pins, and only when someone drops one.";
+export const ENTRY =
+  "You can summon a single room-temperature crouton to your palm every Tuesday at 3 PM, but it always lands on the floor first.";
 
 const MAX_CHARS = 140;
 
-// The gate counts characters, not UTF-16 code units: an em dash is one
-// character. Spread into code points so the count matches the gate.
-function validateEntry(text: string): number {
-  const charCount = [...text].length;
-  if (charCount < 1 || charCount > MAX_CHARS) {
+function validateEntry(entry: string): void {
+  const chars = [...entry];
+  if (chars.length === 0 || entry.trim().length === 0) {
+    throw new Error("entry must not be empty or whitespace-only");
+  }
+  if (chars.length > MAX_CHARS) {
     throw new Error(
-      `entry is ${charCount} characters, outside the 1–${MAX_CHARS} gate`,
+      `entry is ${chars.length} characters, over the ${MAX_CHARS}-character limit`,
     );
   }
-  if (text.trim().length === 0) {
-    throw new Error("entry is only whitespace");
-  }
-  if (text.includes("\n")) {
+  if (entry.includes("\n")) {
     throw new Error("entry must be a single line");
   }
-  return charCount;
 }
 
-const charCount = validateEntry(ENTRY);
+const OUTPUT_DIR = process.env.OUTPUT_DIR ?? "./output";
 
-const outDir = process.env.OUTPUT_DIR ?? "/output";
-mkdirSync(outDir, { recursive: true });
-writeFileSync(`${outDir}/entry.txt`, ENTRY, "utf8");
-console.log(`wrote ${charCount} characters to ${outDir}/entry.txt`);
+validateEntry(ENTRY);
+mkdirSync(OUTPUT_DIR, { recursive: true });
+const outPath = join(OUTPUT_DIR, "entry.txt");
+writeFileSync(outPath, ENTRY, "utf8");
+// Round-trip check: what was written must be byte-identical to ENTRY,
+// with no trailing newline added by the write.
+const roundTrip = readFileSync(outPath, "utf8");
+if (roundTrip !== ENTRY) {
+  throw new Error("round-trip mismatch: entry.txt differs from ENTRY");
+}
+console.log(
+  `wrote ${outPath} (${[...ENTRY].length} chars, ${Buffer.byteLength(ENTRY, "utf8")} bytes, no trailing newline)`,
+);
