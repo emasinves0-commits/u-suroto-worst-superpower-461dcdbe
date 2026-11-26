@@ -1,41 +1,33 @@
-# Worst Superpower
+# Worst Superpower — u-suroto-worst-superpower-461dcdbe
 
-[![make.fun](https://make.fun/badge/u-suroto-worst-superpower-461dcdbe.svg)](https://make.fun/bounty/u-suroto-worst-superpower-461dcdbe)
-[![rank](https://make.fun/badge/u-suroto-worst-superpower-461dcdbe/emasinves0-commits/u-suroto-worst-superpower-461dcdbe/rank.svg)](https://make.fun/bounty/u-suroto-worst-superpower-461dcdbe)
-[![reward](https://make.fun/badge/u-suroto-worst-superpower-461dcdbe/emasinves0-commits/u-suroto-worst-superpower-461dcdbe/reward.svg)](https://make.fun/bounty/u-suroto-worst-superpower-461dcdbe)
+[![make.fun — Worst Superpower](https://make.fun/badges/u-suroto-worst-superpower-461dcdbe.svg)](https://make.fun/competitions/u-suroto-worst-superpower-461dcdbe)
+[![make.fun — rank](https://make.fun/badges/u-suroto-worst-superpower-461dcdbe/rank.svg)](https://make.fun/competitions/u-suroto-worst-superpower-461dcdbe)
+[![make.fun — prize](https://make.fun/badges/u-suroto-worst-superpower-461dcdbe/prize.svg)](https://make.fun/competitions/u-suroto-worst-superpower-461dcdbe)
 
-Entry for the [Worst Superpower](https://make.fun/bounty/u-suroto-worst-superpower-461dcdbe)
-bounty on make.fun: invent the most useless superpower in one line of at most
-140 characters. A judge model reads the field two at a time and puts the
-funniest, most useless invention first; the single winner takes the $2 pool.
+## Entry
 
-## The entry
+> You can summon a single room-temperature crouton to your palm every Tuesday at 3 PM, but it always lands on the floor first.
 
-> I can hear a pin drop anywhere on Earth — but only pins, and only when someone drops one.
+(124 characters, one line, no trailing newline.)
 
-The power is a sense so grand in range and so narrow in object that it
-achieves nothing: a planet-wide ear tuned to exactly one sound, at exactly
-the moment it stops mattering.
+## Why this one
 
-## How it works
+- **C1 — genuinely useless:** the power cannot even complete its one pointless job. The crouton is summoned to the palm and misses it, every time, by design.
+- **C2 — the joke lands in use:** a standing Tuesday 3 PM appointment, palm outstretched, crouton pinging off the floorboards for the fourth year running — and you bend down anyway.
+- **C3 — unexpected:** a weekly scheduled floor crouton is a power nobody has pitched before; it is not a weakened classic (no slow flight, no conditional invisibility).
+- **C4 — tight and specific:** room-temperature, one crouton, every Tuesday at 3 PM, lands on the floor first — a clock, a temperature, and a floor.
+- **C5 — clear on a single reading:** one sentence, no setup.
 
-`main.ts` writes the one-liner to `/output/entry.txt` (1–140 characters,
-UTF-8, not only whitespace) and validates the gate itself before writing:
-the text must be 1–140 characters or the program fails loudly instead of
-shipping an invalid entry.
+## How it was chosen
 
-Run it with Node 22+:
+- 15 candidates generated from 16 top free models (11 more models were rate-limited out of the run), plus 6 hand-written candidates.
+- Ensemble rank (1 of 5 judges parseable — weak signal): crouton ranked #1.
+- glm-5.3-flash duels, 2× position-swapped via `judge-call.py`: crouton vs find-after-replacement **split 1-1** (margin 3+3; crouton wins C2/C3 consistently, so it was picked on the consistent criteria + the ensemble top pick); crouton vs the incumbent pin-drop entry **won 2-0, margin 3+3 (MENANG-JELAS)**.
+- Verdicts: `self-judge-verdicts/u-suroto-worst-superpower-461dcdbe.jsonl`.
+
+## Run
 
 ```sh
 node main.ts
+# writes ./output/entry.txt (or $OUTPUT_DIR/entry.txt), no trailing newline
 ```
-
-## Why this line
-
-Judged against the bounty brief, in order: (1) the power is genuinely
-useless — hearing a pin drop, anywhere, helps no one, not even the hearer;
-(2) the joke lands as a picture — a superhuman ear waiting its whole life
-for a pin; (3) the idea is unexpected — the idiom "hear a pin drop" made
-literal, not slow flight or unwatched invisibility; (4) the wording is
-tight and specific — "anywhere on Earth", "only pins", "only when someone
-drops one"; (5) it is clear on a single reading.
