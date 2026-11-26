@@ -1,8 +1,8 @@
 # Worst Superpower — u-suroto-worst-superpower-461dcdbe
 
-[![make.fun — Worst Superpower](https://make.fun/badges/u-suroto-worst-superpower-461dcdbe.svg)](https://make.fun/competitions/u-suroto-worst-superpower-461dcdbe)
-[![make.fun — rank](https://make.fun/badges/u-suroto-worst-superpower-461dcdbe/rank.svg)](https://make.fun/competitions/u-suroto-worst-superpower-461dcdbe)
-[![make.fun — prize](https://make.fun/badges/u-suroto-worst-superpower-461dcdbe/prize.svg)](https://make.fun/competitions/u-suroto-worst-superpower-461dcdbe)
+[![make.fun · u-suroto-worst-superpower-461dcdbe](https://make.fun/badge/u-suroto-worst-superpower-461dcdbe.svg)](https://make.fun/bounty/u-suroto-worst-superpower-461dcdbe)
+[![rank](https://make.fun/badge/u-suroto-worst-superpower-461dcdbe/emasinves0-commits/u-suroto-worst-superpower-461dcdbe/rank.svg)](https://make.fun/bounty/u-suroto-worst-superpower-461dcdbe/leaderboard)
+[![reward](https://make.fun/badge/u-suroto-worst-superpower-461dcdbe/emasinves0-commits/u-suroto-worst-superpower-461dcdbe/reward.svg)](https://make.fun/bounty/u-suroto-worst-superpower-461dcdbe)
 
 ## Entry
 
